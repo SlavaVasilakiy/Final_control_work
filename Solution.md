@@ -32,6 +32,7 @@
 
 3. ```bash
     wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+    dpkg -i mysql-apt-config_0.8.18-1_all.deb
     apt update
     apt install mysql-server
    ```
@@ -41,3 +42,8 @@
     dpkg -i apacheds-2.0.0.AM26-amd64.deb
     dpkg -P apacheds
    ```
+
+5. Done
+6. <br>
+
+   ![Diagram](img/diagram.png)
