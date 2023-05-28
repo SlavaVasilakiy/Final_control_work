@@ -37,7 +37,7 @@
    ```
 
 4. ```bash
-       wget https://dlcdn.apache.org//directory/apacheds/dist/2.0.0.AM26/apacheds-2.0.0.AM26-amd64.deb
-       dpkg -i apacheds-2.0.0.AM26-amd64.deb
-       dpkg -P apacheds
+    wget https://dlcdn.apache.org//directory/apacheds/dist/2.0.0.AM26/apacheds-2.0.0.AM26-amd64.deb
+    dpkg -i apacheds-2.0.0.AM26-amd64.deb
+    dpkg -P apacheds
    ```
