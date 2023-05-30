@@ -31,8 +31,8 @@
    ```
 
 3. ```bash
-    wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-    dpkg -i mysql-apt-config_0.8.18-1_all.deb
+    wget wget https://dev.mysql.com/get/mysql-apt-config_0.8.25-1_all.deb
+    dpkg -i mysql-apt-config_0.8.25-1_all.deb
     apt update
     apt install mysql-server
    ```
@@ -46,4 +46,6 @@
 5. Done
 6. <br>
 
-   ![Diagram](img/diagram.png)
+   ![Diagram](img/diagram.png) <br>
+
+Задания с 7 по 12 [Файл с SQL скриптом](animals.sql)
