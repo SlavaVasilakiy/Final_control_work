@@ -12,7 +12,7 @@ public class Hamster extends Animal {
 
 	@Override
 	public void teachNewCommand(String command) {
-		String updatedSkills = getSkills() + ", " + command;
+		String updatedSkills = getSkills() + "," + command;
 		setSkills(updatedSkills);
 	}
 }
