@@ -48,4 +48,4 @@
 
    ![Diagram](img/diagram.png) <br>
 
-Задания с 7 по 12 [Файл с SQL скриптом](animals.sql)
+Задания с 7 по 12 [Файл с SQL скриптом](sql/animals.sql)
