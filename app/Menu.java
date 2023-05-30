@@ -7,17 +7,15 @@ import java.util.Scanner;
 public class Menu {
 	private final Database database;
 	private final Scanner scanner;
-	private final Counter counter;
 
 	public Menu(Database database) {
 		this.database = database;
 		scanner = new Scanner(System.in);
-		counter = new Counter();
 	}
 
 	public void displayMenu() {
 		while (true) {
-			try (counter) {
+			try {
 				System.out.println("Меню:");
 				System.out.println("1. Добавить новое животное");
 				System.out.println("2. Показать список всех животных");
@@ -30,7 +28,7 @@ public class Menu {
 
 				switch (choice) {
 					case 1 -> addNewAnimal();
-					case 2 -> displayAllAnimals();
+					case 2 -> database.displayAllAnimals();
 					case 3 -> displayAnimalCommands();
 					case 4 -> teachNewCommand();
 					case 0 -> {
@@ -39,11 +37,9 @@ public class Menu {
 					}
 					default -> System.out.println("Неверный выбор. Попробуйте снова.");
 				}
-			} /** catch (InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println("Ошибка: неверный формат ввода. Попробуйте снова.");
-				scanner.nextLine(); // Очистка буфера сканнера после ошибочного ввода */
-			catch (Exception e) {
-				System.out.println("Ошибка при работе с объектом Counter: " + e.getMessage());
+				scanner.nextLine(); // Очистка буфера сканнера после ошибочного ввода
 			}
 		}
 	}
@@ -79,7 +75,6 @@ public class Menu {
 
 		database.addAnimal(animal);
 		System.out.println("Животное успешно добавлено в базу данных.");
-		counter.add(); // Увеличение счетчика при успешном добавлении животного
 	}
 
 	private void displayAnimalCommands() {
@@ -92,26 +87,10 @@ public class Menu {
 	private void teachNewCommand() {
 		System.out.println("Введите имя животного:");
 		String name = scanner.nextLine();
-		System.out.println("Введите новую команду:");
+		System.out.println("Введите новые команды через запятую:");
 		String command = scanner.nextLine();
 
 		database.teachNewCommand(name, command);
 		System.out.println("Команда успешно добавлена для животного.");
-	}
-
-	private void displayAllAnimals() {
-		try {
-			File file = new File("database.txt");
-			Scanner fileScanner = new Scanner(file);
-
-			while (fileScanner.hasNextLine()) {
-				String animalData = fileScanner.nextLine();
-				System.out.println(animalData);
-			}
-
-			fileScanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("Файл с данными о животных не найден.");
-		}
 	}
 }
